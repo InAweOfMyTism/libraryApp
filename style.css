@@ -1,5 +1,5 @@
 *{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -34,5 +34,55 @@
     height: 100vh;
     background-color: var(--color-bg);
 
-    display: block;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .library-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .library-container>*{
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)) ;
+    width: 300px;
+    border-radius: 30px;
+  }
+
+  .book-item{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    height: 600px;
+  }
+
+  .book-item .front-cover{
+    border: 2px solid greenyellow;
+  }
+
+  .book-item .back-cover{
+    border: 2px solid red;
+  }
+
+  .new-book{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .book-entry{
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+  }
+
+  .book-entry>*{
+    background-color: var(--color-gray-4);
+  }
+
+  .hidden{
+    display: none;
   }
