@@ -1,72 +1,79 @@
-console.log("Hello World!");
+console.log("Hello there");
 
-const library = [];
-const libraryDisplay = document.querySelector(".library-container");
-const bookEntry = document.querySelector(".book-entry");
-
-function Book(title, author, pageCount, coverImage){
-    this.title = title;
-    this.author = author;
-    this.pageCount = pageCount;
-    this.blurb = "lorem25";
-    this.readStatus = false;
-    this.coverImage = `./images/${coverImage}`;
-}
-
-function addBook (title, author, pageCount, coverImage){
-    const newBook = new Book(title, author, pageCount, coverImage);
-    library.push(newBook);
-}
-
-addBook("The Hobbit", "Tolkien", 10000, "hobbit.jpeg");
-addBook("The Martian", "Weir", 369, "martian.jpeg");
-
-console.log(library);
-
-const newBookBtn = document.querySelector(".new-btn");
+const newBookBtn = document.querySelector(".new-book-btn");
+const myBookDisplay = document.querySelector(".my-book-display");
 
 newBookBtn.addEventListener('click', ()=>{
-    console.log("hello");
-    bookEntry.classList.toggle("hidden");
+    const newBook = document.createElement("div");
+    newBook.classList.add("book");
+
+    const newBookEntry = document.createElement("form");
+    newBookEntry.classList.add("entry");
+
+    const titleEntry = document.createElement("label");
+    titleEntry.innerText = "Title: *";
+    const titleEntryInput = document.createElement("input");
+
+    titleEntryInput.setAttribute("type", "text");
+    titleEntryInput.setAttribute("name", "enter-title");
+    titleEntryInput.setAttribute("id", "enter-title");
+    titleEntryInput.setAttribute("placeholder", "Enter Title");
+
+    titleEntry.appendChild(titleEntryInput);
+
+    const authorEntry = document.createElement("label");
+    authorEntry.innerText = "Author: *";
+    const authorEntryInput = document.createElement("input");
+
+    authorEntryInput.setAttribute("type", "text");
+    authorEntryInput.setAttribute("name", "enter-author");
+    authorEntryInput.setAttribute("id", "enter-author");
+    authorEntryInput.setAttribute("placeholder", "Enter Author");
+
+    authorEntry.appendChild(authorEntryInput);
+
+    const wordCountEntry = document.createElement("label");
+    wordCountEntry.innerText = "Word Count: *";
+    const wordCountEntryInput = document.createElement("input");
+
+    wordCountEntryInput.setAttribute("type", "number");
+    wordCountEntryInput.setAttribute("name", "enter-wordCount");
+    wordCountEntryInput.setAttribute("id", "enter-wordCount");
+
+    wordCountEntry.appendChild(wordCountEntryInput);
+
+    const coverEntry = document.createElement("label");
+    coverEntry.innerText = "Cover Image: *";
+    const coverEntryInput = document.createElement("input");
+
+    coverEntryInput.setAttribute("type", "file");
+    coverEntryInput.setAttribute("name", "enter-cover");
+    coverEntryInput.setAttribute("id", "enter-cover");
+
+    coverEntry.appendChild(coverEntryInput);
+
+    const submitBtn = document.createElement("button")
+
+    submitBtn.setAttribute("type", "submit");
+    submitBtn.innerText = "Submit"
+
+    
+
+    // const newTitle = document.createElement("p");
+    // const newAuthor = document.createElement("p");
+    // const newWordCount = document.createElement("p");
+    // const newCover = document.createElement("img");
+
+    // newBook.appendChild(newTitle);
+    // newBook.appendChild(newAuthor);
+    // newBook.appendChild(newWordCount);
+    // newBook.appendChild(newCover);
+
+    newBookEntry.appendChild(titleEntry);
+    newBookEntry.appendChild(authorEntry);
+    newBookEntry.appendChild(wordCountEntry);
+    newBookEntry.appendChild(coverEntry);
+    newBookEntry.appendChild(submitBtn);
+    newBook.appendChild(newBookEntry);
+    myBookDisplay.appendChild(newBook);
 });
-
-function displayLibrary(){
-    library.forEach((book)=>{
-
-        bookItem = document.createElement("DIV");
-        bookItem.classList.add("book-item");
-
-            frontCover = document.createElement("DIV");
-
-                bookTitle = document.createElement("H2");
-                    bookTitle.innerText = book.title;
-
-                bookImage = document.createElement("IMG");
-                    bookImage.setAttribute("SRC", book.coverImage);
-
-            frontCover.appendChild(bookTitle);
-            frontCover.appendChild(bookImage);
-
-            backCover = document.createElement("DIV");
-
-                bookAuthor = document.createElement("H3");
-                    bookAuthor.innerText = book.author;
-
-                bookPageCount = document.createElement("H4");
-                    bookPageCount.innerText = book.pageCount;
-
-                bookBlurb = document.createElement("P");
-                    bookBlurb.innerText = book.blurb
-
-            backCover.appendChild(bookAuthor);
-            backCover.appendChild(bookAuthor);
-            backCover.appendChild(bookAuthor);
-
-        bookItem.appendChild(frontCover);
-        bookItem.appendChild(backCover);
-
-        libraryDisplay.appendChild(bookItem);
-    })
-}
-
-displayLibrary();

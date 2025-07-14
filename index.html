@@ -9,24 +9,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Redacted+Script:wght@300;400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./imgs/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <div class="main-content">
-        <h1 class="main-title">My Library</h1>
-        <div class="library-container">
-            <div class="new-book">
-                <button class="new-btn">
-                    <i class="fa fa-plus"></i>
-                </button>
+    <div class="library-container">
+        <h1 class="title">My Library</h1>
+        <div class="my-book-display">
+            <button class="new-book-btn">New Book</button>
+            <div class="book">
+                <form class="entry" action="" method="post">
+                    <label for="enter-title">Title: <input type="text" name="enter-title" id="enter-title" placeholder="Book Title"></label>
+                    <label for="enter-author">Author: <input type="text" name="enter-author" id="enter-author" placeholder="Author Name"></label>
+                    <label for="enter-wordcount">Word Count: <input type="number" name="enter-wordcount" id="enter-wordcount"></label>
+                    <label for="enter-cover">Cover Image: <input type="file" name="enter-cover" id="enter-cover"></label>
+                    <button type="submit">Submit</button>
+                </form>
+                <div class="display hidden">
+                    <p class="disp-title">The Title of this book is</p>
+                    <p class="disp-author">Author McAuthorface</p>
+                    <p class="disp-wordcount">67890 words</p>
+                    <!-- <img src="./images/placeholder.jpeg" alt="The cover of the book" class="disp-cover"> -->
+                </div>
             </div>
-        </div>
-        <div class="book-entry">
-            <input type="text" label="title">
-            <input type="text" label="author">
-            <input type="text" label="page-count">
-            <input type="text" label="blurb">
-            <button type="submit">Add Book</button>
         </div>
     </div>
     <script src="script.js"></script>

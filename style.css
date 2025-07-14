@@ -1,88 +1,75 @@
 *{
-    /* border: 2px solid red; */
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
-    font-family: 'roboto', sans-serif;
-  }
+  /* border: 2px solid red; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: 'roboto', sans-serif;
+}
 
-  h1, h2, h3, h4, h5, h6{
-    font-family: 'orbitron', sans-serif;
-  }
+h1, h2, h3, h4, h5, h6{
+  font-family: 'orbitron', sans-serif;
+}
 
-  button{
-    padding: 1rem;
-  }
-  
-  :root{
-    --color-primary:rgb(0, 255, 255);
-    --color-secondary:rgb(255, 0, 255);
-    --color-tertiary:rgb(255, 255, 0);
-    --color-bg:rgb(197, 182, 133);
-    --color-black: rgb(0,0,0);
-    --color-gray-1: rgb(50,50,50);
-    --color-gray-2: rgb(69, 72, 88);
-    --color-gray-3: rgb(170,170,170);
-    --color-gray-4: rgb(215,215,215 );
-    --color-white: rgb(255, 255, 255);
-  }
-  
-  .main-content{
-    /* DIMENSIONS */
-    width: 100%;
-    height: 100vh;
-    background-color: var(--color-bg);
+button{
+  padding: 1rem;
+}
 
-    display: flex;
-    flex-direction: column;
-  }
+:root{
+  --color-primary:rgb(0, 255, 255);
+  --color-secondary:rgb(255, 0, 255);
+  --color-tertiary:rgb(255, 255, 0);
+  --color-bg:rgb(197, 182, 133);
+  --color-black: rgb(0,0,0);
+  --color-gray-1: rgb(50,50,50);
+  --color-gray-2: rgb(69, 72, 88);
+  --color-gray-3: rgb(170,170,170);
+  --color-gray-4: rgb(215,215,215 );
+  --color-white: rgb(255, 255, 255);
+}
 
-  .library-container{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    padding: 1rem;
-  }
+.hidden {
+  display: none;
+}
 
-  .library-container>*{
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)) ;
-    width: 300px;
-    border-radius: 30px;
-  }
+.my-book-display{
+  background-color: var(--color-gray-2);
 
-  .book-item{
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    height: 600px;
-  }
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 
-  .book-item .front-cover{
-    border: 2px solid greenyellow;
-  }
+.my-book-display > * {
+  background-color: var(--color-gray-3);
 
-  .book-item .back-cover{
-    border: 2px solid red;
-  }
+}
 
-  .new-book{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.book {
+  display: flex;
+  flex-direction: column;
 
-  .book-entry{
-    border: 2px solid black;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
+  border: 2px solid var(--color-black);
+  border-radius: 2rem;
+  margin: 1.25rem;
+}
 
-  }
+.delete-book {
+  border: 2px solid var(--color-gray-1);
+  background-color: var(--color-gray-3);
+  margin: .5rem;
+  text-align: center;
+}
 
-  .book-entry>*{
-    background-color: var(--color-gray-4);
-  }
+.entry {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 
-  .hidden{
-    display: none;
-  }
+  padding: 1rem;
+
+}
+
+.entry *{
+  margin-top: .5rem;
+}
